@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@600&family=Great+Vibes&family=The+Nautigal:wght@700&display=swap');
+/* font-family: 'Great Vibes', cursive; */
+/* font-family: 'The Nautigal', cursive; */
+/* font-family: 'Arima', cursive; */
+
+    
+.Slog{
+    font-family: 'The Nautigal', cursive;
+    font-size: 1.9rem;
+    text-align: center;
+    margin: auto;
+}
+
+.Slog1{
+    font-family: 'Arima', cursive;
+    display: flex;
+    margin: auto;
+    font-weight: bolder;
+}

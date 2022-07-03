@@ -1,0 +1,50 @@
+@keyframes bicis {
+    9% {background-image: url('../../assets/Image/59224-bicicleta.jpg'); background-size: cover; background-position: center;}
+    18% {background-image: url('../../assets/Image/5576004.jpg'); background-size: cover; background-position: center}
+    27% {background-image: url('../../assets/Image/59174-bicicleta.jpg'); background-size: cover; background-position: center}
+    36% {background-image: url('../../assets/Image/59180-bicicleta.jpg'); background-size: cover; background-position: center}
+    45% {background-image: url('../../assets/Image/59196-bicicleta.jpg'); background-size: cover; background-position: center}
+    54% {background-image: url('../../assets/Image/59295-bicicleta.jpg'); background-size: cover; background-position: center}
+    63% {background-image: url('../../assets/Image/59315-bicicleta.jpg'); background-size: cover; background-position: center}
+    72% {background-image: url('../../assets/Image/59385-bicicleta.jpg'); background-size: cover; background-position: center}
+    81% {background-image: url('../../assets/Image/59388-bicicleta.jpg'); background-size: cover; background-position: center}
+    90% {background-image: url('../../assets/Image/59419-bicicleta.jpg'); background-size: cover; background-position: center}
+    97% {background-image: url('../../assets/Image/59430-bicicleta.jpg'); background-size: cover; background-position: center;}
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
+
+.publicity{
+    height: 100vh;
+    animation-name: bicis;
+    animation-duration: 300s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    position: relative;
+    text-align: center;
+    }
+
+.public{
+    position: absolute;
+    color: black;
+    font-family: 'The Nautigal', cursive;
+    font-size: 4.5rem;
+    font-weight: 900;
+    position: absolute;
+    bottom: 8vh;
+    right: 10vh;
+    text-shadow: rgba(239, 205, 11, 0.817) 1px 1px 3px;
+}
+
+.welcome{
+    font-family: 'Great Vibes', cursive;
+    position: absolute;
+    color:rgba(239, 205, 11, 0.817);
+    text-shadow: black 2px 2px 2px;
+    top: 20vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-family: 'Oleo Script Swash Caps', cursive;
+}
