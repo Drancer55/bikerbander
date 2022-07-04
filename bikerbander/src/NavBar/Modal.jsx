@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState}  from 'react';
 import { Button, Modal, Nav } from "react-bootstrap";
 import WarningIcon from '@mui/icons-material/Warning';
 import './Modal.css';

@@ -1,3 +1,4 @@
+import React, { Component}  from 'react';
 import NavBar from '../NavBar/NavBar';
 import { useAuth } from '../Context/AuthContext'
 import './Store.css'
