@@ -1,3 +1,4 @@
+import React, { Component}  from 'react';
 import { Button, Card } from 'react-bootstrap';
 import './Login.css'
 import { useState } from 'react';
@@ -41,7 +42,7 @@ export const Login = () => {
     };
 
     const turnBack = () => {
-        navigate('/store')
+        navigate('store')
     }
 
     const handleResetPassword = async () => {
@@ -59,7 +60,7 @@ export const Login = () => {
     const handleWithGoogleSignin = async (user) => {
         loginWithGoogle()
         .then((result) => {
-            navigate("/store");
+            navigate("store");
         })
         .catch((error) => {
             console.log(error);
