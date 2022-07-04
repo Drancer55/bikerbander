@@ -1,0 +1,25 @@
+.BBLog{
+    font-family: 'The Nautigal', cursive;
+    font-size: 5rem;
+    text-align: center;
+    margin: auto;
+    text-shadow: rgba(239, 205, 11, 0.942) 1px 3px 3px;
+    text-shadow: (239, 205, 11, 0.817) 1px 1px 3px;
+    background-color: rgba(139, 139, 139, 0.057);
+    border-radius: 100%;
+    box-shadow: black 1px 2px 1px;
+}
+
+.login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error{
+    color: red;
+    font-family: 'Arima', cursive;
+    font-weight: bolder;
+    font-size: 1rem;
+}

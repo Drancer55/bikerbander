@@ -2,16 +2,27 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './NavBar/NavBar';
 import LandingPage from './LandingPage/LandingPage';
-
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
+import { Store } from './Store/Store'
+import { Login } from './NavBar/Login'
+import { Register } from './NavBar/Register'
+import { AuthProvider } from './Context/AuthContext'
 
 function App() {
   return (
-    <div className="App">
-      <NavBar />
-      <LandingPage/>
+    <div >
+      <AuthProvider>
+        <Routes>
+          <Route index element={<LandingPage />} />
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/bikerbander' element={<LandingPage />} />
+          <Route path='/store' element={<Store />}/>
+          <Route path='/login/' element={<Login />} />
+          <Route path='/register/' element={<Register/>}/>
+        </Routes>
+      </AuthProvider>
     </div>
-  );
+    );
 }
 
 export default App;

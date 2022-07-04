@@ -5,13 +5,13 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useAuth } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-export const Login = () => {
+export const Register = () => {
     const [user, setUser] = useState({
         email: '',
         password: ''
     });
     const [error, setError] = useState();
-    const { logIn } = useAuth();
+    const { signUp } = useAuth();
     const navigate = useNavigate();
     const handleChange = ({target: {name, value}}) => {
         setUser({...user, [name]: value})
@@ -21,35 +21,35 @@ export const Login = () => {
         e.preventDefault();
         setError('')
         try {
-            await logIn(user.email, user.password)
+            await signUp(user.email, user.password)
             navigate('/store');
         } catch (error) {
             console.log(error.code)
             if (error.code === 'auth/internal-error') {
                 setError('Ocurrió un error, por favor intentalo de nuevo') || setTimeout(() => setError(''), 3000);
-            } else if (error.code === 'auth/user-not-found') {
-                setError('Usuario no registrado') || setTimeout(() => setError(''), 3000);
-            } else if (error.code === 'auth/wrong-password') {
-                setError('La contraseña incorrecta, intenta nuevamente') || setTimeout(() => setError(''), 3000);
+            } else if (error.code === 'auth/email-already-in-use') {
+                setError('El correo electrónico proporcionado ya está registrado') || setTimeout(() => setError(''), 3000);
+            } else if (error.code === 'auth/weak-password') {
+                setError('La contraseña debe tener al menos 6 caracteres') || setTimeout(() => setError(''), 3000);
             } else if (error.code === 'auth/invalid-email') {
                 setError('El correo proporcionado es inválido') || setTimeout(() => setError(''), 3000)};
         }
     };
 
     const turnBack = () => {
-        navigate('/store')
+        navigate('/login')
     }
 
     return (
         <>
             <div>
-            <Button variant='light' onClick={turnBack}><ArrowBackIcon /> Regresar </Button>
+                <Button variant='light' onClick={turnBack}><ArrowBackIcon /> Regresar </Button>
             </div>
             <div className='login'>
                 <Card className="text-center">
                     <Card.Title className="BBLog">BikerBander</Card.Title>
                     <Card.Body>
-                        <Card.Title>Iniciar Sesión:</Card.Title>
+                        <Card.Title>Registro:</Card.Title>
                         {error && <p className='error'>{error}</p>}
                         <form onSubmit={handleSubmit}>
                             <label htmlFor='email'>Email:</label>
@@ -58,12 +58,11 @@ export const Login = () => {
                             <label htmlFor='password'>Contraseña</label>
                             <input onChange={handleChange} type="password" name="password" id="password" placeholder='Contraseña'></input>
                             <br />
-                            <button>Entrar</button>
+                            <button>Registrar</button>
                         </form>
                     </Card.Body>
                     <Card.Footer className="text-muted">
-                        <p>¿Aún no tienes cuenta?<a href="/register"> Registrate</a></p>
-                        <a href="#">¿Olvidaste tu contraseña?</a>
+                        <p>Footer</p>
                     </Card.Footer>
                 </Card>
             </div>

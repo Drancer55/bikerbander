@@ -1,11 +1,24 @@
 import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './NavBar.css';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../Context/AuthContext';
 
-function NavBar() {
+const NavBar = () => {
+    const {user, logOut} = useAuth();
+
+    const navigate = useNavigate();
+    const handleLogIn = () => {
+        navigate('/login')
+    }
+    const handleLogOut = async () => {
+        await logOut();
+        navigate('/store')
+    }
+
     return (
         <Navbar bg="warning" expand="sm" fixed="top">
             <Container>
-                <Navbar.Brand href="#" className="Slog" >BikerBander</Navbar.Brand>
+                <Navbar.Brand href="/bikerbander" className="Slog" >BikerBander</Navbar.Brand>
                 <Navbar.Brand></Navbar.Brand>
                 <Navbar.Brand></Navbar.Brand>
                 <Navbar.Brand></Navbar.Brand>
@@ -24,7 +37,8 @@ function NavBar() {
                     <Form className="d-flex">
                         <Form.Control type="search" placeholder="Buscar" className="me-2" aria-label="Search"/>
                     </Form>
-                    <Button variant="danger">Iniciar Sesión</Button>
+                    {!user ? <Button variant="danger" onClick={handleLogIn}>Iniciar Sesión</Button> : <Button variant="danger" onClick={handleLogOut}>Cerrar Sesión</Button>}
+                    
                 </Navbar.Collapse>
             </Container>
         </Navbar>

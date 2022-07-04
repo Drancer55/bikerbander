@@ -17,7 +17,7 @@
 .publicity{
     height: 100vh;
     animation-name: bicis;
-    animation-duration: 300s;
+    animation-duration: 250s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-play-state: running;
@@ -35,6 +35,9 @@
     bottom: 8vh;
     right: 10vh;
     text-shadow: rgba(239, 205, 11, 0.817) 1px 1px 3px;
+    background-color: rgba(139, 139, 139, 0.224);
+    border-radius: 100%;
+    box-shadow: black 1px 3px 2px;
 }
 
 .welcome{
@@ -42,9 +45,22 @@
     position: absolute;
     color:rgba(239, 205, 11, 0.817);
     text-shadow: black 2px 2px 2px;
-    top: 20vh;
+    top: 15vh;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
     font-family: 'Oleo Script Swash Caps', cursive;
+}
+
+.store{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    font-family: 'Arima', cursive;
+    color: beige;
+    text-shadow: black 1px 1px 1px;
+    font-size: 1rem;
+    box-shadow: black 2px 3px 5px 5px;
 }
