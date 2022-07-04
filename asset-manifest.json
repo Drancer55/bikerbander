@@ -1,26 +1,19 @@
 {
-  "files": {
-    "main.css": "/bikerbander/static/css/main.87c93594.css",
-    "main.js": "/bikerbander/static/js/main.ba3bb9d3.js",
-    "static/js/787.92aa1161.chunk.js": "/bikerbander/static/js/787.92aa1161.chunk.js",
-    "static/media/59419-bicicleta.jpg": "/bikerbander/static/media/59419-bicicleta.fb2e47a7cf3fee7c61c4.jpg",
-    "static/media/59174-bicicleta.jpg": "/bikerbander/static/media/59174-bicicleta.7f45ddd2b398070b74bb.jpg",
-    "static/media/5576004.jpg": "/bikerbander/static/media/5576004.dbf99d4ac806f1868d8d.jpg",
-    "static/media/59196-bicicleta.jpg": "/bikerbander/static/media/59196-bicicleta.373bc1cd7a07c9b126b5.jpg",
-    "static/media/59385-bicicleta.jpg": "/bikerbander/static/media/59385-bicicleta.dbf9d17ba5bce30d1088.jpg",
-    "static/media/59224-bicicleta.jpg": "/bikerbander/static/media/59224-bicicleta.50826e6cb06745a0f929.jpg",
-    "static/media/59315-bicicleta.jpg": "/bikerbander/static/media/59315-bicicleta.7438d3c0255588bd6db7.jpg",
-    "static/media/Wallpaper.jpg": "/bikerbander/static/media/Wallpaper.a212c481498da1a474aa.jpg",
-    "static/media/59180-bicicleta.jpg": "/bikerbander/static/media/59180-bicicleta.95aa2e29a49722b361a9.jpg",
-    "static/media/59388-bicicleta.jpg": "/bikerbander/static/media/59388-bicicleta.8785728e16eaa4bf1dff.jpg",
-    "static/media/59295-bicicleta.jpg": "/bikerbander/static/media/59295-bicicleta.12668b1df1f1ea8a94f1.jpg",
-    "index.html": "/bikerbander/index.html",
-    "main.87c93594.css.map": "/bikerbander/static/css/main.87c93594.css.map",
-    "main.ba3bb9d3.js.map": "/bikerbander/static/js/main.ba3bb9d3.js.map",
-    "787.92aa1161.chunk.js.map": "/bikerbander/static/js/787.92aa1161.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.87c93594.css",
-    "static/js/main.ba3bb9d3.js"
-  ]
+  "main.css": "/bikerbander/static/css/main.27b96e52.chunk.css",
+  "main.js": "/bikerbander/static/js/main.189d0bad.chunk.js",
+  "main.js.map": "/bikerbander/static/js/main.189d0bad.chunk.js.map",
+  "static/js/1.a3ba2d4c.chunk.js": "/bikerbander/static/js/1.a3ba2d4c.chunk.js",
+  "static/js/1.a3ba2d4c.chunk.js.map": "/bikerbander/static/js/1.a3ba2d4c.chunk.js.map",
+  "static/css/2.2e5247dc.chunk.css": "/bikerbander/static/css/2.2e5247dc.chunk.css",
+  "static/js/2.71e73715.chunk.js": "/bikerbander/static/js/2.71e73715.chunk.js",
+  "static/js/2.71e73715.chunk.js.map": "/bikerbander/static/js/2.71e73715.chunk.js.map",
+  "runtime~main.js": "/bikerbander/static/js/runtime~main.59687d86.js",
+  "runtime~main.js.map": "/bikerbander/static/js/runtime~main.59687d86.js.map",
+  "static/media/Login.css": "/bikerbander/static/media/Wallpaper.989d66b8.jpg",
+  "static/media/LandingPage.css": "/bikerbander/static/media/59419-bicicleta.4ce7f345.jpg",
+  "static/css/main.27b96e52.chunk.css.map": "/bikerbander/static/css/main.27b96e52.chunk.css.map",
+  "static/css/2.2e5247dc.chunk.css.map": "/bikerbander/static/css/2.2e5247dc.chunk.css.map",
+  "index.html": "/bikerbander/index.html",
+  "precache-manifest.aba01053b6ca763b93dd3dc2b2694c4d.js": "/bikerbander/precache-manifest.aba01053b6ca763b93dd3dc2b2694c4d.js",
+  "service-worker.js": "/bikerbander/service-worker.js"
 }
