@@ -7,6 +7,7 @@ import { Store } from './Store/Store'
 import { Login } from './NavBar/Login'
 import { Register } from './NavBar/Register'
 import { AuthProvider } from './Context/AuthContext'
+import { NotFound } from './LandingPage/NotFound'
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <Route path='/' element={<LandingPage />} />
           <Route path='/bikerbander' element={<LandingPage />} />
           <Route path='/store' element={<Store />}/>
-          <Route path='/login/' element={<Login />} />
-          <Route path='/register/' element={<Register/>}/>
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/*' element={<NotFound/>}/>
         </Routes>
       </AuthProvider>
     </div>
