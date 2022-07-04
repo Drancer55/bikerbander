@@ -1,23 +1,39 @@
 import React, { useState}  from 'react';
-import { Button, Modal, Nav } from "react-bootstrap";
-import WarningIcon from '@mui/icons-material/Warning';
+import { Button, Form, FormGroup, Modal, Nav } from "react-bootstrap";
 import './Modal.css';
-import { getFirestore, doc, deleteDoc } from "firebase/firestore";
 import { useAuth } from "../Context/AuthContext";
 import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
+import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, setDoc, where, getFirestore } from "firebase/firestore";
 
 const db = getFirestore();
+
+// export const updateItem = async (id, obj) => {
+//     const colRef = collection(db, 'Banders');
+//     await updateDoc(doc(colRef, id), obj)
+// }
 //Modal traido de la librería Bootstrap
 export const PerfilModal = ({ id }) => {
-    
     // console.log(id)
     //Despliega el modal con el seteo de Show inicializado en false
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [dudeID, setDudeID] = useState(id);
+    const [phone, setPhone] = useState(null);
+    const { user, perfil } = useAuth();
+    
+    const upDataDoc = async (id, phone, adress, country, email) => {
+        await upDataDoc(doc(db, `Banders/${id}`), {
+            phone,
+            adress,
+            country,
+            email
+        } )
+        handleClose();
+        alert('updated')
+    };
 
-    const { user, perfil } = useAuth()
+    
 
     return (
         <>  
@@ -35,18 +51,16 @@ export const PerfilModal = ({ id }) => {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div className="contain">
-                        <div className="part2">
-                            <h5>Email: </h5>
-                            <a href="#"> {user.email}</a>
-                        </div>
-                    </div>
+                    <Form>
+                        <label htmlFor='phone'>Teléfono:</label>
+                        <input typeof='tel' name="phone" onChange={(e) => phone(e.target.value)} placeholder={user.phone}></input>
+                    </Form>
                 </Modal.Body>
                 <Modal.Footer className="mdlFooter">
                     <Button variant="secondary" onClick={handleClose} className="modalbtn"> 
                         Cancelar
                     </Button>
-                    <Button variant="warning" onClick={handleClose} className="modalbtn">
+                    <Button variant="warning" onClick={upDataDoc} type="submit">
                         Guardar
                     </Button>
                 </Modal.Footer>
