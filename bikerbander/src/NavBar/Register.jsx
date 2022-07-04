@@ -32,7 +32,7 @@ export const Register = () => {
             } else if (error.code === 'auth/weak-password') {
                 setError('La contraseña debe tener al menos 6 caracteres') || setTimeout(() => setError(''), 3000);
             } else if (error.code === 'auth/invalid-email') {
-                setError('El correo proporcionado es inválido') || setTimeout(() => setError(''), 3000)};
+                setError('El correo proporcionado no es inválido') || setTimeout(() => setError(''), 3000)};
         }
     };
 
@@ -41,31 +41,34 @@ export const Register = () => {
     }
 
     return (
-        <>
+        <div className="log">
             <div>
-                <Button variant='light' onClick={turnBack}><ArrowBackIcon /> Regresar </Button>
+                <Button variant='secondary' onClick={turnBack}><ArrowBackIcon /> Regresar </Button>
             </div>
             <div className='login'>
-                <Card className="text-center">
+                <Card className="text-center carta">
                     <Card.Title className="BBLog">BikerBander</Card.Title>
                     <Card.Body>
                         <Card.Title>Registro:</Card.Title>
                         {error && <p className='error'>{error}</p>}
-                        <form onSubmit={handleSubmit}>
-                            <label htmlFor='email'>Email:</label>
-                            <input onChange={handleChange} type="email" name="email" id="email" placeholder='Ingresa tu Correo'></input>
-                            <br />
-                            <label htmlFor='password'>Contraseña</label>
-                            <input onChange={handleChange} type="password" name="password" id="password" placeholder='Contraseña'></input>
-                            <br />
-                            <button>Registrar</button>
+                        <form className="form">
+                            <div className="part">
+                                <label htmlFor='email'>Email:</label>
+                                <input onChange={handleChange} type="email" name="email" id="email" placeholder='Ingresa tu Correo'></input>
+                                <br />
+                            </div>
+                            <div className="part">
+                                <label htmlFor='password'>Contraseña</label>
+                                <input onChange={handleChange} type="password" name="password" id="password" placeholder='Contraseña'></input>
+                                <br />
+                            </div>
+                            <div className="partbtn">
+                                <Button onClick={handleSubmit}variant="dark">Registrar</Button>
+                            </div>
                         </form>
                     </Card.Body>
-                    <Card.Footer className="text-muted">
-                        <p>Footer</p>
-                    </Card.Footer>
                 </Card>
             </div>
-        </>
+        </div>
     );
 }

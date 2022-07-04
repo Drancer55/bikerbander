@@ -11,7 +11,7 @@ export const Store = () => {
         <>
             <NavBar />
             <div className="logged">
-                {user ? <h5>Bienvenido: {user.email || user.displayName}</h5> : <h5>Gracias por tu visita</h5>}
+                {user ? <h5>Bienvenido: {user.displayName || user.email}</h5> : <h5>Gracias por tu visita</h5>}
             </div>
         </>
     )

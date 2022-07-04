@@ -21,10 +21,16 @@ export const AuthProvider = ({ children }) => {
     
     const logIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
     const logOut = () => signOut(auth);
+    const GooglProvider = new GoogleAuthProvider();
+    const loginWithGoogle = () => signInWithPopup(auth, GooglProvider);
+    const resetPassword = (email) => {
+        sendPasswordResetEmail(auth, email);
+    
+    };
 
     useEffect(() => {
         //Escuchador de eventos en tiempo real -onSnapshot by Firebase
-        onSnapshot(collection(db, 'Users'), (snapShot) => {
+        onSnapshot(collection(db, 'Bikers'), (snapShot) => {
           //Lista de usuarios registrados [doc.data()] y su respectivo Id para realizar cambios unitarios
             setUsers(snapShot.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
         })
@@ -39,7 +45,7 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ signUp, logIn, user, logOut, loading }}>
+        <AuthContext.Provider value={{ signUp, logIn, user, logOut, loading, resetPassword, loginWithGoogle }}>
             {children}
         </AuthContext.Provider>
     )

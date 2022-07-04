@@ -1,15 +1,14 @@
 @keyframes bicis {
-    9% {background-image: url('../../assets/Image/59224-bicicleta.jpg'); background-size: cover; background-position: center;}
-    18% {background-image: url('../../assets/Image/5576004.jpg'); background-size: cover; background-position: center}
-    27% {background-image: url('../../assets/Image/59174-bicicleta.jpg'); background-size: cover; background-position: center}
-    36% {background-image: url('../../assets/Image/59180-bicicleta.jpg'); background-size: cover; background-position: center}
-    45% {background-image: url('../../assets/Image/59196-bicicleta.jpg'); background-size: cover; background-position: center}
-    54% {background-image: url('../../assets/Image/59295-bicicleta.jpg'); background-size: cover; background-position: center}
-    63% {background-image: url('../../assets/Image/59315-bicicleta.jpg'); background-size: cover; background-position: center}
-    72% {background-image: url('../../assets/Image/59385-bicicleta.jpg'); background-size: cover; background-position: center}
-    81% {background-image: url('../../assets/Image/59388-bicicleta.jpg'); background-size: cover; background-position: center}
-    90% {background-image: url('../../assets/Image/59419-bicicleta.jpg'); background-size: cover; background-position: center}
-    97% {background-image: url('../../assets/Image/59430-bicicleta.jpg'); background-size: cover; background-position: center;}
+    10% {background-image: url('../../assets/Image/59224-bicicleta.jpg'); background-size: cover; background-position: center;}
+    20% {background-image: url('../../assets/Image/5576004.jpg'); background-size: cover; background-position: center}
+    30% {background-image: url('../../assets/Image/59174-bicicleta.jpg'); background-size: cover; background-position: center}
+    40% {background-image: url('../../assets/Image/59180-bicicleta.jpg'); background-size: cover; background-position: center}
+    50% {background-image: url('../../assets/Image/59196-bicicleta.jpg'); background-size: cover; background-position: center}
+    60% {background-image: url('../../assets/Image/59295-bicicleta.jpg'); background-size: cover; background-position: center}
+    70% {background-image: url('../../assets/Image/59315-bicicleta.jpg'); background-size: cover; background-position: center}
+    80% {background-image: url('../../assets/Image/59385-bicicleta.jpg'); background-size: cover; background-position: center}
+    90% {background-image: url('../../assets/Image/59388-bicicleta.jpg'); background-size: cover; background-position: center}
+    100% {background-image: url('../../assets/Image/59419-bicicleta.jpg'); background-size: cover; background-position: center}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
@@ -17,7 +16,7 @@
 .publicity{
     height: 100vh;
     animation-name: bicis;
-    animation-duration: 250s;
+    animation-duration: 200s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     animation-play-state: running;
