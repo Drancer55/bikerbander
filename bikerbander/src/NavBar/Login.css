@@ -1,0 +1,66 @@
+.BBLog{
+    font-family: 'The Nautigal', cursive;
+    font-size: 5rem;
+    text-align: center;
+    margin: auto;
+    text-shadow: rgba(239, 205, 11, 0.942) 1px 3px 3px;
+    text-shadow: (239, 205, 11, 0.817) 1px 1px 3px;
+    background-color: rgba(93, 90, 90, 0.501);
+    border-radius: 100%;
+    box-shadow: black 1px 2px 1px;
+}
+
+.login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(227, 230, 233, 0.365);
+}
+
+.error{
+    color: red;
+    font-family: 'Arima', cursive;
+    font-weight: bolder;
+    font-size: 1rem;
+    text-shadow: black 1px 1px 1px;
+}
+
+.log{
+    background-image: url('../../assets/Image/Wallpaper.jpg');
+    height: 100vh;
+    background-size: cover;
+    }
+
+.carta{
+    color: black;
+    text-shadow: rgb(125, 120, 120) 1px 1px 0px;
+    width: auto;
+    padding-top: 5vh;
+    padding-bottom: 4vh;
+    background-color: transparent;
+}
+
+.form{
+    background-color: rgba(199, 204, 204, 0.246);
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.part{
+    margin: 2vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+}
+
+.cfoot {
+    background-color: rgba(0, 0, 0, 0.311);
+    border-radius: 15px;
+    text-shadow: black 1px 1px;
+}
+
+.btns{
+    width: 50%;
+    margin-top: 2vh;
+}
