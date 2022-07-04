@@ -1,0 +1,26 @@
+.ModTitle{
+    color: #430d0d;
+    margin: 0 auto;
+}
+
+.mdlFooter{
+    margin: auto;
+}
+
+.block{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+.contain{
+    margin: 0 10vh;
+    border: solid black;
+}
+
+.part2{
+    margin: 3vh 10vh;
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-end;
+}

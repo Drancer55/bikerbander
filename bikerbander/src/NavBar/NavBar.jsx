@@ -1,11 +1,15 @@
+import * as React from 'react';
 import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import './NavBar.css';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/AuthContext';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import { PerfilModal } from './Modal'
+
 
 const NavBar = () => {
     const {user, logOut} = useAuth();
-
     const navigate = useNavigate();
     const handleLogIn = () => {
         navigate('/login')
@@ -32,13 +36,22 @@ const NavBar = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action7" className="Slog1">Niños</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#action2" className="Slog1">Contacto</Nav.Link>                        
+                        <Nav.Link href="#action2" className="Slog1">Contacto</Nav.Link>                     
+                        {user ?  <PerfilModal id={user.uid} /> : null}
                     </Nav>
                     <Form className="d-flex">
                         <Form.Control type="search" placeholder="Buscar" className="me-2" aria-label="Search"/>
                     </Form>
-                    {!user ? <Button variant="danger" onClick={handleLogIn}>Iniciar Sesión</Button> : <Button variant="danger" onClick={handleLogOut}>Cerrar Sesión</Button>}
-                    
+                    <Navbar.Brand>
+                        {!user ? <Button variant="danger" onClick={handleLogIn}>Iniciar Sesión</Button> : <Button variant="danger" onClick={handleLogOut}>Cerrar Sesión</Button>}
+                    </Navbar.Brand>
+                    <Navbar.Brand>
+                        {user ?
+                            <Stack>
+                                <Avatar alt={user.displayName || user.email} src={user.photoURL} />
+                            </Stack>
+                            : null}
+                    </Navbar.Brand>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
