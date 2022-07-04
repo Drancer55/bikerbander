@@ -1,16 +1,26 @@
 {
   "files": {
-    "main.css": "/bikerbander/static/css/main.073c9b0a.css",
-    "main.js": "/bikerbander/static/js/main.2c5920cb.js",
+    "main.css": "/bikerbander/static/css/main.7359e979.css",
+    "main.js": "/bikerbander/static/js/main.3ea20c9e.js",
     "static/js/787.92aa1161.chunk.js": "/bikerbander/static/js/787.92aa1161.chunk.js",
-    "static/media/logo.svg": "/bikerbander/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/59419-bicicleta.jpg": "/bikerbander/static/media/59419-bicicleta.fb2e47a7cf3fee7c61c4.jpg",
+    "static/media/59174-bicicleta.jpg": "/bikerbander/static/media/59174-bicicleta.7f45ddd2b398070b74bb.jpg",
+    "static/media/5576004.jpg": "/bikerbander/static/media/5576004.dbf99d4ac806f1868d8d.jpg",
+    "static/media/59196-bicicleta.jpg": "/bikerbander/static/media/59196-bicicleta.373bc1cd7a07c9b126b5.jpg",
+    "static/media/59385-bicicleta.jpg": "/bikerbander/static/media/59385-bicicleta.dbf9d17ba5bce30d1088.jpg",
+    "static/media/59224-bicicleta.jpg": "/bikerbander/static/media/59224-bicicleta.50826e6cb06745a0f929.jpg",
+    "static/media/59315-bicicleta.jpg": "/bikerbander/static/media/59315-bicicleta.7438d3c0255588bd6db7.jpg",
+    "static/media/Wallpaper.jpg": "/bikerbander/static/media/Wallpaper.a212c481498da1a474aa.jpg",
+    "static/media/59180-bicicleta.jpg": "/bikerbander/static/media/59180-bicicleta.95aa2e29a49722b361a9.jpg",
+    "static/media/59388-bicicleta.jpg": "/bikerbander/static/media/59388-bicicleta.8785728e16eaa4bf1dff.jpg",
+    "static/media/59295-bicicleta.jpg": "/bikerbander/static/media/59295-bicicleta.12668b1df1f1ea8a94f1.jpg",
     "index.html": "/bikerbander/index.html",
-    "main.073c9b0a.css.map": "/bikerbander/static/css/main.073c9b0a.css.map",
-    "main.2c5920cb.js.map": "/bikerbander/static/js/main.2c5920cb.js.map",
+    "main.7359e979.css.map": "/bikerbander/static/css/main.7359e979.css.map",
+    "main.3ea20c9e.js.map": "/bikerbander/static/js/main.3ea20c9e.js.map",
     "787.92aa1161.chunk.js.map": "/bikerbander/static/js/787.92aa1161.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.2c5920cb.js"
+    "static/css/main.7359e979.css",
+    "static/js/main.3ea20c9e.js"
   ]
 }
