@@ -1,11 +1,12 @@
 import React, { Component}  from 'react';
-import { Button, Card, NavLink } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import './Login.css'
 import { useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useAuth } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
+import { Link } from 'react-router-dom';
 
 export const Login = () => {
     const [user, setUser] = useState({
@@ -97,8 +98,8 @@ export const Login = () => {
                         </form>
                     </Card.Body>
                     <Card.Footer className="cfoot">
-                        <p>¿Aún no tienes cuenta?<NavLink href="/register">Registrate</NavLink></p>
-                        <a href="#" onClick={handleResetPassword}>¿Olvidaste tu contraseña?</a>
+                        <p>¿Aún no tienes cuenta?<Link href="/register">Registrate</Link></p>
+                        <Link href="#" onClick={handleResetPassword}>¿Olvidaste tu contraseña?</Link>
                     </Card.Footer>
                 </Card>
             </div>
