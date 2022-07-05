@@ -1,5 +1,5 @@
 import React, { Component}  from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Button, Card, NavLink } from 'react-bootstrap';
 import './Login.css'
 import { useState } from 'react';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -97,7 +97,7 @@ export const Login = () => {
                         </form>
                     </Card.Body>
                     <Card.Footer className="cfoot">
-                        <p>¿Aún no tienes cuenta?<a href="/register"> Registrate</a></p>
+                        <p>¿Aún no tienes cuenta?<NavLink href="/register">Registrate</NavLink></p>
                         <a href="#" onClick={handleResetPassword}>¿Olvidaste tu contraseña?</a>
                     </Card.Footer>
                 </Card>
