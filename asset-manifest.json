@@ -1,12 +1,12 @@
 {
   "main.css": "/bikerbander/static/css/main.e4e318a2.chunk.css",
-  "main.js": "/bikerbander/static/js/main.ca4add9f.chunk.js",
-  "main.js.map": "/bikerbander/static/js/main.ca4add9f.chunk.js.map",
+  "main.js": "/bikerbander/static/js/main.ad9f5ef3.chunk.js",
+  "main.js.map": "/bikerbander/static/js/main.ad9f5ef3.chunk.js.map",
   "static/js/1.d5caa88c.chunk.js": "/bikerbander/static/js/1.d5caa88c.chunk.js",
   "static/js/1.d5caa88c.chunk.js.map": "/bikerbander/static/js/1.d5caa88c.chunk.js.map",
   "static/css/2.76c8ac81.chunk.css": "/bikerbander/static/css/2.76c8ac81.chunk.css",
-  "static/js/2.ba9ce80b.chunk.js": "/bikerbander/static/js/2.ba9ce80b.chunk.js",
-  "static/js/2.ba9ce80b.chunk.js.map": "/bikerbander/static/js/2.ba9ce80b.chunk.js.map",
+  "static/js/2.f7fe43d4.chunk.js": "/bikerbander/static/js/2.f7fe43d4.chunk.js",
+  "static/js/2.f7fe43d4.chunk.js.map": "/bikerbander/static/js/2.f7fe43d4.chunk.js.map",
   "runtime~main.js": "/bikerbander/static/js/runtime~main.d11749d1.js",
   "runtime~main.js.map": "/bikerbander/static/js/runtime~main.d11749d1.js.map",
   "static/media/Login.css": "/bikerbander/static/media/Wallpaper.989d66b8.jpg",
@@ -29,6 +29,6 @@
   "static/css/main.e4e318a2.chunk.css.map": "/bikerbander/static/css/main.e4e318a2.chunk.css.map",
   "static/css/2.76c8ac81.chunk.css.map": "/bikerbander/static/css/2.76c8ac81.chunk.css.map",
   "index.html": "/bikerbander/index.html",
-  "precache-manifest.85798b289a2857a106857512af925a50.js": "/bikerbander/precache-manifest.85798b289a2857a106857512af925a50.js",
+  "precache-manifest.09446302a8681dc68009a26c919e40e0.js": "/bikerbander/precache-manifest.09446302a8681dc68009a26c919e40e0.js",
   "service-worker.js": "/bikerbander/service-worker.js"
 }
