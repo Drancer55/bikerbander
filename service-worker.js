@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bikerbander/precache-manifest.09446302a8681dc68009a26c919e40e0.js"
+  "/bikerbander/precache-manifest.f4a2667cb5857971b81e7590aa0d393b.js"
 );
 
 workbox.clientsClaim();
