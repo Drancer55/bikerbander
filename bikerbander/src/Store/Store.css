@@ -3,3 +3,8 @@
     top: 12vh;
     left: 50%;
 }
+
+.wrapper{
+    overflow-x: hidden;
+    overflow-y: auto;
+}

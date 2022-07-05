@@ -1,7 +1,6 @@
 import React, { Component}  from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import NavBar from './NavBar/NavBar';
 import LandingPage from './LandingPage/LandingPage';
 import { Routes, Route } from 'react-router-dom';
 import { Store } from './Store/Store'
@@ -9,6 +8,7 @@ import { Login } from './NavBar/Login'
 import { Register } from './NavBar/Register'
 import { AuthProvider } from './Context/AuthContext'
 import { NotFound } from './LandingPage/NotFound'
+import {AddProducts} from './Products/addProducts'
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
           <Route path='store' element={<Store />}/>
           <Route path='login' element={<Login />} />
           <Route path='register' element={<Register />} />
+          <Route path="add-products" element={<AddProducts/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
       </AuthProvider>

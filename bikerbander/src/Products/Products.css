@@ -1,0 +1,15 @@
+.content{
+    margin-top: 30vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(197, 198, 199);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.imagen{
+    width: 15rem;
+    height: 11rem;
+}
