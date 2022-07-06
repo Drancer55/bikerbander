@@ -8,7 +8,7 @@ import { Login } from './NavBar/Login'
 import { Register } from './NavBar/Register'
 import { AuthProvider } from './Context/AuthContext'
 import { NotFound } from './LandingPage/NotFound'
-import {AddProducts} from './Products/addProducts'
+import {AddProducts} from './Products/AddProducts'
 
 function App() {
   return (
