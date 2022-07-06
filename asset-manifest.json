@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/bikerbander/static/css/main.34680ed8.css",
-    "main.js": "/bikerbander/static/js/main.9c21cbbb.js",
+    "main.js": "/bikerbander/static/js/main.2e6e0225.js",
     "static/js/787.92aa1161.chunk.js": "/bikerbander/static/js/787.92aa1161.chunk.js",
     "static/media/59419-bicicleta.jpg": "/bikerbander/static/media/59419-bicicleta.fb2e47a7cf3fee7c61c4.jpg",
     "static/media/59174-bicicleta.jpg": "/bikerbander/static/media/59174-bicicleta.7f45ddd2b398070b74bb.jpg",
@@ -32,11 +32,11 @@
     "static/media/2.jpg": "/bikerbander/static/media/2.2b0060a97c9bdc0f9610.jpg",
     "index.html": "/bikerbander/index.html",
     "main.34680ed8.css.map": "/bikerbander/static/css/main.34680ed8.css.map",
-    "main.9c21cbbb.js.map": "/bikerbander/static/js/main.9c21cbbb.js.map",
+    "main.2e6e0225.js.map": "/bikerbander/static/js/main.2e6e0225.js.map",
     "787.92aa1161.chunk.js.map": "/bikerbander/static/js/787.92aa1161.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.34680ed8.css",
-    "static/js/main.9c21cbbb.js"
+    "static/js/main.2e6e0225.js"
   ]
 }
