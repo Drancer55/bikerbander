@@ -5,10 +5,16 @@ import './Store.css'
 import { Products } from '../Products/Products';
 import { Button } from 'react-bootstrap';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import { useNavigate } from 'react-router-dom'
 
 export const Store = () => {
     const { user, loading } = useAuth();
+    const navigate = useNavigate();
     
+    const handleAddPage = () => {
+        navigate('/add-products')
+}
+
     if(loading) return <h5>Loading...</h5>
 
     return (
@@ -26,7 +32,7 @@ export const Store = () => {
             <Products />
             <br/>
             <center>
-                <Button variant="primary" href="/add-products"> Agregar producto nuevo</Button>
+                <Button variant="primary" onClick={handleAddPage}> Agregar producto nuevo</Button>
             </center>
             <br/>
         </div>
