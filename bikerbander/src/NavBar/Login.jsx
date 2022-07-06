@@ -98,8 +98,8 @@ export const Login = () => {
                         </form>
                     </Card.Body>
                     <Card.Footer className="cfoot">
-                        <p>¿Aún no tienes cuenta?<Link href="/register">Registrate</Link></p>
-                        <Link href="#" onClick={handleResetPassword}>¿Olvidaste tu contraseña?</Link>
+                        <p>¿Aún no tienes cuenta?<Link to="register">Registrate</Link></p>
+                        <a href="#" onClick={handleResetPassword}>¿Olvidaste tu contraseña?</a>
                     </Card.Footer>
                 </Card>
             </div>

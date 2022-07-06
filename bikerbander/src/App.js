@@ -16,11 +16,13 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route index element={<LandingPage />} />
-          <Route path='/bikerbander' element={<LandingPage />} />
+          <Route path='/' element={<LandingPage />} />
+          <Route path='bikerbander' element={<LandingPage />} />
           <Route path='store' element={<Store />}/>
           <Route path='login' element={<Login />} />
+          <Route path="/login/register" element={<Register />} />
           <Route path='register' element={<Register />} />
-          <Route path="add-products" element={<AddProducts/>}/>
+          <Route path='add-products' element={<AddProducts/>}/>
           <Route path='*' element={<NotFound/>}/>
         </Routes>
       </AuthProvider>
