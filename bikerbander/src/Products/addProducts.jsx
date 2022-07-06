@@ -3,12 +3,13 @@ import { Form, Button } from "react-bootstrap"
 import { db } from "../firebase";
 import { getStorage, ref } from 'firebase/storage'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useNavigate } from 'react-router-dom'
 
 const storage = getStorage();
 
 
 export const AddProducts = () => {
-
+    const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(0);
@@ -17,6 +18,10 @@ export const AddProducts = () => {
     const [uploadError, setUploadError] = useState('');
     const [imageError, setImageError] = useState('');
     const types = ['image/jpg', 'image/jpeg', 'image/png', 'image/PNG'];
+
+    const handleBack = () => {
+        navigate('/store')
+    }
 
     const handleProductImg = (e) => {
         let selectedFile = e.target.files[0];
@@ -65,7 +70,7 @@ export const AddProducts = () => {
     return (
         <div className="container">
             <br />
-            <Button variant="secondary" href="/store"><ArrowBackIcon/>Regresar</Button>
+            <Button variant="secondary" onClick={handleBack}><ArrowBackIcon/>Regresar</Button>
             <br />
             <center>
                 <h2>Agregar Productos</h2>
