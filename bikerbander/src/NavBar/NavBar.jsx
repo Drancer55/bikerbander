@@ -11,6 +11,7 @@ import { PerfilModal } from './Modal'
 const NavBar = () => {
     const {user, logOut} = useAuth();
     const navigate = useNavigate();
+
     const handleLogIn = () => {
         navigate('/login')
     }
