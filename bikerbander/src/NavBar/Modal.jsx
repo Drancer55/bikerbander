@@ -3,37 +3,34 @@ import { Button, Form, FormGroup, Modal, Nav } from "react-bootstrap";
 import './Modal.css';
 import { useAuth } from "../Context/AuthContext";
 import Avatar from '@mui/material/Avatar';
+import { db } from '../firebase';
 import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, setDoc, where, getFirestore } from "firebase/firestore";
 
-const db = getFirestore();
 
-// export const updateItem = async (id, obj) => {
-//     const colRef = collection(db, 'Banders');
-//     await updateDoc(doc(colRef, id), obj)
-// }
-//Modal traido de la librería Bootstrap
 export const PerfilModal = ({ id }) => {
     // console.log(id)
     //Despliega el modal con el seteo de Show inicializado en false
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const [dudeID, setDudeID] = useState(id);
     const [phone, setPhone] = useState(null);
+    const [adress, setAdress] = useState(null);
+    const [country, setCountry] = useState(null);
+    const [email, setEmail] = useState(null);
     const { user, perfil } = useAuth();
-    
-    const upDataDoc = async (id, phone, adress, country, email) => {
-        await upDataDoc(doc(db, `Banders/${id}`), {
-            phone,
-            adress,
-            country,
-            email
-        } )
+
+    const upDataDoc = async (e) => {
+        e.preventDefault();
+        const ref = doc(collection(db,'Banders', id));
+        await updateDoc(ref, {
+            phone: phone,
+            adress: adress,
+            country: country,
+            email: email
+        });
         handleClose();
         alert('updated')
     };
-
-    
 
     return (
         <>  
@@ -52,8 +49,23 @@ export const PerfilModal = ({ id }) => {
                 </Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <label htmlFor='phone'>Teléfono:</label>
-                        <input typeof='tel' name="phone" onChange={(e) => phone(e.target.value)} placeholder={user.phone}></input>
+                        <div>
+                            <label htmlFor='phone'>Teléfono:</label>
+                            <input typeof='tel' name="phone" onChange={(e) => setPhone(e.target.value)} placeholder={user.phone}></input>    
+                        </div>
+                        <div>
+                            <label htmlFor='mail'>Email:</label>
+                            <input typeof='email' name="mail" onChange={(e) => setEmail(e.target.value)} placeholder={user.email}></input>                            
+                        </div>
+                        <div>
+                            <label htmlFor='country'>Ciudad:</label>
+                            <input type="text" name="country" onChange={(e) => setCountry(e.target.value)} placeholder={user.country}></input>                            
+                        </div>
+                        <div>
+                            <label htmlFor='adress'>Dirección:</label>
+                            <textarea name="adress" onChange={(e) => setAdress(e.target.value)} placeholder={user.adress}></textarea>
+                        </div>
+                            
                     </Form>
                 </Modal.Body>
                 <Modal.Footer className="mdlFooter">
