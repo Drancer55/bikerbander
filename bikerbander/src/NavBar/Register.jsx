@@ -49,6 +49,7 @@ export const Register = () => {
 
     const handleChange1 = ({ target: { name, value } }) => {
         setPerfil({ ...perfil, [name]: value })
+        console.log(perfil);
     }
     
     const handleSubmit1 = (e) => {
