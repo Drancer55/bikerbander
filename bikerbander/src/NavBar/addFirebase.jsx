@@ -8,6 +8,6 @@ export const addFirebase = async (perfil) => {
     try {
         await addDoc(collection(db, 'Banders'), perfil);
     } catch (e) {
-        alert('Ocurrió el error: ', e)
+        alert('Ocurrió el error: ' + e);
     }
 }

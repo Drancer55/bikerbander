@@ -1,71 +1,42 @@
-import React, {useState} from "react"
-import { Form, Button } from "react-bootstrap"
-import { db } from "../firebase";
-import { getStorage, ref } from 'firebase/storage'
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
+import { uploadFile } from "../firebase";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { useNavigate } from 'react-router-dom'
-
-const storage = getStorage();
+import { useNavigate } from 'react-router-dom';
+import { UploadProduct } from "./UploadProduct";
 
 
 export const AddProducts = () => {
     const navigate = useNavigate();
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState(0);
-    const [image, setImage] = useState(null);
-    const [successMsg, setSuccessMsg] = useState('');
-    const [uploadError, setUploadError] = useState('');
-    const [imageError, setImageError] = useState('');
-    const types = ['image/jpg', 'image/jpeg', 'image/png', 'image/PNG'];
-
+    
+    const [file, setfile] = useState(null);
+    const [product, setProduct] = useState({
+        item_name: '',
+        short_description: '',
+        price: '', 
+        img: ''
+    });
+    
     const handleBack = () => {
-        navigate('/store')
+        navigate('/store');
     }
 
-    const handleProductImg = (e) => {
-        let selectedFile = e.target.files[0];
-        if (selectedFile) {
-            if (selectedFile && types.includes(selectedFile.type)) {
-                setImage(selectedFile);
-                setImageError('')
-            } else {
-                setImage(null);
-                setImageError('Por favor, selecciona un archivo compatible (jpg, jpeg o png)');
-            }
-        } else {
-            console.log("Selecciona una foto del producto")
+    const handleProduct = ({ target: { name, value } }) => {
+        setProduct({ ...product, [name]: value });
+        // console.log(product);//arreglo de objetos del producto
+        }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const url = await uploadFile(file);
+            // console.log(url); //muestra el URL de la imágen del producto
+            UploadProduct(product, url);
+            navigate('/store');
+        } catch (error) {
+            console.error(error);
         }
     };
-
-    const handleAddProduct = (e) => {
-        e.preventDefault();
-        const uploadTask = ref(storage, `product-images/${image.name}`).put(image);
-        uploadTask.on('state_changed', snapShot => {
-            const progress = (snapShot.bytesTransferred / snapShot.totalBytes) * 100
-            console.log(progress);
-        }, error => setUploadError(error.message), () => {
-            storage.ref('product-images').child(image.name).getDownloadURL().then(url => {
-                db.collection('Products').add({
-                    title,
-                    description,
-                    price: Number(price),
-                    url
-                }).then(() => {
-                    setSuccessMsg('Producto agregado exitosamente');
-                    setTitle('');
-                    setDescription('');
-                    setPrice('');
-                    document.getElementById('file').value = '';
-                    setImageError('');
-                    setUploadError('');
-                    setTimeout(() => {
-                        setSuccessMsg('');
-                    }, 3000)
-                }).catch(error => setUploadError(error.mesage));
-            })
-        }) 
-    }
 
     return (
         <div className="container">
@@ -76,40 +47,31 @@ export const AddProducts = () => {
                 <h2>Agregar Productos</h2>
             </center>
             <hr />
-            {successMsg && <>
-                <div className="succesMsg">{successMsg}</div>
-            </>}
             <Form >
                 <Form.Group>
                     <Form.Label>Nombre del producto (modelo):</Form.Label>
-                    <Form.Control type="text" required onChange={(e) => setTitle(e.target.value)} value={title} />
+                    <Form.Control type="text" name="item_name" id="item_name" required onChange={handleProduct} />
                 </Form.Group>                
                 <Form.Group>
                     <Form.Label>Descripción:</Form.Label>
-                    <Form.Control type="text" required onChange={(e) => setDescription(e.target.value)} value={description}/>
+                    <Form.Control type="text" name="short_description" id="short_description" required onChange={handleProduct} />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Precio:</Form.Label>
-                    <Form.Control type="number" required onChange={(e) => setPrice(e.target.value)} value={price}/>
+                    <Form.Control type="number" name="price" id="price" required onChange={handleProduct} min={1}/>
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Subir imagen:</Form.Label>
-                    <Form.Control type="file" id="file" required onChange={handleProductImg} />
-                    {imageError && <>
-                        <div className='error'>{imageError}</div>
-                    </>}
+                    <Form.Control type="file" id="" onChange={e => setfile(e.target.files[0])} required/>
                 </Form.Group>
                 <Form.Group>
                     <br />
                     <br/>
                     <center>
-                        <Button variant="warning" type="submit" onClick={handleAddProduct}>Agregar producto</Button>
+                        <Button variant="warning" type="submit" onClick={(e) => { handleSubmit(e); handleProduct(e) }}>Agregar producto</Button>
                         </center>
                 </Form.Group>
             </Form>
-            {uploadError && <>
-                        <div className='error'>{uploadError}</div>
-                    </>}
         </div>
     )
 }
