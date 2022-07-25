@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/AuthContext';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import { PerfilModal } from './Modal'
+import { PerfilModal } from './Modal';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 
 
 const NavBar = () => {
@@ -40,9 +41,8 @@ const NavBar = () => {
                         <Nav.Link href="#action2" className="Slog1">Contacto</Nav.Link>                     
                         {user ?  <PerfilModal id={user.uid} /> : null}
                     </Nav>
-                    <Form className="d-flex">
-                        <Form.Control type="search" placeholder="Buscar" className="me-2" aria-label="Search"/>
-                    </Form>
+                    <Navbar.Brand>
+                    </Navbar.Brand>
                     <Navbar.Brand>
                         {!user ? <Button variant="danger" onClick={handleLogIn}>Iniciar Sesión</Button> : <Button variant="danger" onClick={handleLogOut}>Cerrar Sesión</Button>}
                     </Navbar.Brand>

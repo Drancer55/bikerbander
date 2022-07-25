@@ -1,0 +1,8 @@
+.cartImg{
+    height: 7vh;
+    width: 10vh;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 5vh;
+}

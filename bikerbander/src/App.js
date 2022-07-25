@@ -8,7 +8,6 @@ import { Login } from "./NavBar/Login";
 import { Register } from "./NavBar/Register";
 import { AuthProvider } from "./Context/AuthContext";
 import { NotFound } from "./LandingPage/NotFound";
-import { AddProducts } from "./Products/AddProducts";
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="/login/register" element={<Register />} />
           <Route path="register" element={<Register />} />
-          <Route path="add-products" element={<AddProducts />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </AuthProvider>

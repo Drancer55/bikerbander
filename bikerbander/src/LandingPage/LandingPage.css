@@ -1,15 +1,15 @@
 @keyframes bicis {
-    0% {background-image: url('../assets/Image/59224-bicicleta.jpg'); background-size: cover; background-position: center;}
-    10% {background-image: url('../assets/Image/5576004.jpg'); background-size: cover; background-position: center}
-    20% {background-image: url('../assets/Image/59174-bicicleta.jpg'); background-size: cover; background-position: center}
-    30% {background-image: url('../assets/Image/59180-bicicleta.jpg'); background-size: cover; background-position: center}
-    40% {background-image: url('../assets/Image/59196-bicicleta.jpg'); background-size: cover; background-position: center}
-    50% {background-image: url('../assets/Image/59295-bicicleta.jpg'); background-size: cover; background-position: center}
-    60% {background-image: url('../assets/Image/59315-bicicleta.jpg'); background-size: cover; background-position: center}
-    70% {background-image: url('../assets/Image/59385-bicicleta.jpg'); background-size: cover; background-position: center}
-    80% {background-image: url('../assets/Image/59388-bicicleta.jpg'); background-size: cover; background-position: center}
-    90% {background-image: url('../assets/Image/59419-bicicleta.jpg'); background-size: cover; background-position: center}
-    100% {background-image: url('../assets/Image/59430-bicicleta.jpg'); background-size: cover; background-position: center}
+    0% {background-image: url('../assets/Image/BackGround/59224-bicicleta.jpg'); background-size: cover; background-position: center;}
+    10% {background-image: url('../assets/Image/BackGround/5576004.jpg'); background-size: cover; background-position: center}
+    20% {background-image: url('../assets/Image/BackGround/59174-bicicleta.jpg'); background-size: cover; background-position: center}
+    30% {background-image: url('../assets/Image/BackGround/59180-bicicleta.jpg'); background-size: cover; background-position: center}
+    40% {background-image: url('../assets/Image/BackGround/59196-bicicleta.jpg'); background-size: cover; background-position: center}
+    50% {background-image: url('../assets/Image/BackGround/59295-bicicleta.jpg'); background-size: cover; background-position: center}
+    60% {background-image: url('../assets/Image/BackGround/59315-bicicleta.jpg'); background-size: cover; background-position: center}
+    70% {background-image: url('../assets/Image/BackGround/59385-bicicleta.jpg'); background-size: cover; background-position: center}
+    80% {background-image: url('../assets/Image/BackGround/59388-bicicleta.jpg'); background-size: cover; background-position: center}
+    90% {background-image: url('../assets/Image/BackGround/59419-bicicleta.jpg'); background-size: cover; background-position: center}
+    100% {background-image: url('../assets/Image/BackGround/59430-bicicleta.jpg'); background-size: cover; background-position: center}
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&display=swap');
