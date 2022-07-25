@@ -66,17 +66,24 @@
         margin: 3vh 0 0 5vh;
       }
 
+      .eraseAll{
+        border: transparent;
+        background-color: transparent;
+      }
+
       .cartVacio {
         text-align: center;
         margin-top: 5px;
         font-size: 14px;
       }
   
-      .total {
+      .subTotal {
         text-align: center;
-        font-weight: bold;
         margin-top: 15px;
         padding-bottom: 35px;
+        font-size: 1rem;
+        font-family: Helvetica, sans-serif;
+
       }
   
       .productsContainer{

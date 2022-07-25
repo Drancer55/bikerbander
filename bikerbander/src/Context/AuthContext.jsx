@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem("cartProducts", JSON.stringify(cartItems));
-        console.log(cartItems);
+        // console.log(cartItems);
         //Escuchador de eventos en tiempo real -onSnapshot by Firebase
         onSnapshot(collection(db, 'Banders'), (snapShot) => {
           //Lista de usuarios registrados [doc.data()] y su respectivo Id para realizar cambios unitarios
@@ -88,8 +88,43 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
+    const deleteAllItemCart = (item) => {
+        const inCart = cartItems.find(
+            (productInCart) => productInCart.id === item.id
+        );
+        if (inCart.quantity === 1) {
+            setCartItems(cartItems.filter(productInCart => productInCart.id !== item.id));
+        } else {
+            setCartItems(
+                cartItems.map((productInCart) => {
+                if (productInCart.id === item.id) {
+                    console.log(productInCart)
+                    return { ...inCart, quantity: inCart.quantity - inCart.quantity };
+                } else return productInCart;
+            }));
+        }
+    };
+
+    const deleteAllItemsOfCart = (item) => {
+        console.log(item);
+        const inCart = cartItems.find(
+            (productInCart) => productInCart.id === item.id
+        );
+
+        if (inCart.quantity === 1) {
+            setCartItems(cartItems.filter(productInCart => productInCart.id !== item.id));
+        } else {
+            setCartItems(
+                cartItems.map((productInCart) => {
+                if (productInCart.id === item.id) {
+                    return { ...inCart, quantity: inCart.quantity - {cartItems} };
+                } else return productInCart;
+            }));
+        }
+    };
+
     return (
-        <AuthContext.Provider value={{ signUp, logIn, user, logOut, loading, resetPassword, loginWithGoogle, perfil, cartItems, addItemCart, deleteItemCart }}>
+        <AuthContext.Provider value={{ signUp, logIn, user, logOut, loading, resetPassword, loginWithGoogle, perfil, cartItems, addItemCart, deleteItemCart, deleteAllItemCart }}>
             {children}
         </AuthContext.Provider>
     )
