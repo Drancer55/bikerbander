@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import styles from './styles.module.scss';
 import { ItemCart } from './ItemCart';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
+import { Button } from 'bootstrap';
 
 export const Cart = () => {
     const [cartOpen, setCartOpen] = useState(false);
@@ -15,7 +16,7 @@ export const Cart = () => {
         )
     }, [cartItems]);
     
-    const total = cartItems.reduce((previus, current) => previus + current.quantity * current.price_without_tax, 0);
+    const subTotal = cartItems.reduce((previus, current) => previus + current.quantity * current.price_without_tax, 0);
 
     return (
         <div className={styles.cartContainer}>
@@ -67,7 +68,8 @@ export const Cart = () => {
 
             {cartItems && cartOpen && (
                 <div className={styles.cart}>
-                    <h5><ShoppingCartIcon/> Order Summary</h5>
+                    <h5 className='cartTitle'><ShoppingCartTwoToneIcon/> Order Summary <button className='DeleteAll'>Remover todo</button></h5>
+                    
                     {cartItems.length === 0 ? (
                         <p className={styles.cartVacio}>Aún no has seleccionado algún producto</p>
                     ) : (
@@ -77,8 +79,7 @@ export const Cart = () => {
                             ))}
                         </div>
                     )}
-
-                    <h2 className={styles.total}>Total: ${total}</h2>
+                    <h2 className={styles.subTotal}>SubTotal: ${subTotal}</h2>
                 </div>
             )}
         </div>

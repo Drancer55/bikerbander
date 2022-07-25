@@ -1,8 +1,55 @@
 .cartImg{
     height: 7vh;
     width: 10vh;
-    border-radius: 5px;
+    border-radius: 9px;
     display: flex;
     align-items: center;
     margin-left: 5vh;
+}
+.cartBtn{
+    border-radius: 999px;
+    padding: none;
+    border: transparent;
+    background-color: transparent;
+    color: rgba(15, 68, 96, 0.447);
+}
+.totalRow{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 12px;
+    margin-top: 3px;
+    border-bottom: rgba(0, 0, 0, 0.14) solid 1px;
+}
+.sellTitle{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: .9rem;
+    width: 25%;
+}
+.sellSubTitle{
+    font-weight: normal;
+    font-size: .7rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 18vh;
+}
+.cartTitle{
+    font-weight: normal;
+}
+.cartBtnTrash{
+    border-radius: 999px;
+    padding: none;
+    border: transparent;
+    background-color: transparent;
+    color: rgba(18, 2, 2, 0.484);
+}
+.DeleteAll{
+    border: transparent;
+    background-color: transparent;
+    color: rgb(28, 52, 52);
+    margin-left: 70%;
+    margin-right: 0;
+    font-size: 1rem;
 }
