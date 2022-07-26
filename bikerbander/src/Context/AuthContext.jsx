@@ -2,16 +2,15 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail } from "firebase/auth";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db, auth } from "../firebase";
-
+// Se crea un contexto mediante React
 export const AuthContext = createContext();
-
+//useAuth contendrá multiples funciones disponibles en el documento
 export const useAuth = () => {
-
     const context = useContext(AuthContext);
     if (!context) throw new Error("No hay un proveedor de autenticación");
     return context;
 };
-
+// Seteo de los datos a necesitar
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [perfil, setPerfil] = useState(null);
@@ -52,11 +51,11 @@ export const AuthProvider = ({ children }) => {
         });
         return () => unsubscribe;
     }, [cartItems]);
-
+// funcion para agregar objetos al carrito
     const addItemCart = (item) => {
         const inCart = cartItems.find(
             (productInCart) => productInCart.id === item.id
-        );
+            );
 
         if (inCart) {
             setCartItems(
@@ -105,26 +104,12 @@ export const AuthProvider = ({ children }) => {
         }
     };
 
-    const deleteAllItemsOfCart = (item) => {
-        console.log(item);
-        const inCart = cartItems.find(
-            (productInCart) => productInCart.id === item.id
-        );
-
-        if (inCart.quantity === 1) {
-            setCartItems(cartItems.filter(productInCart => productInCart.id !== item.id));
-        } else {
-            setCartItems(
-                cartItems.map((productInCart) => {
-                if (productInCart.id === item.id) {
-                    return { ...inCart, quantity: inCart.quantity - {cartItems} };
-                } else return productInCart;
-            }));
-        }
+    const deleteAllItemsOfCart = (cartItems) => {
+        alert("Ocurrio un error, estamos trabajando para solucionarlo")
     };
 
     return (
-        <AuthContext.Provider value={{ signUp, logIn, user, logOut, loading, resetPassword, loginWithGoogle, perfil, cartItems, addItemCart, deleteItemCart, deleteAllItemCart }}>
+        <AuthContext.Provider value={{ signUp, logIn, user, logOut, loading, resetPassword, loginWithGoogle, perfil, cartItems, addItemCart, deleteItemCart, deleteAllItemCart, deleteAllItemsOfCart }}>
             {children}
         </AuthContext.Provider>
     )

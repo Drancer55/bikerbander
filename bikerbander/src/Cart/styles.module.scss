@@ -1,10 +1,11 @@
 .cartContainer {
-    width: 100vh;
-    height: 50vh;
     display: flex;
     justify-content: flex-end;
     position: absolute;
     z-index: 100;
+    top: 8vh;
+    left: 100%;
+    transform: translate(-50%, -50%);
 
     .buttonCartContainer {
       position: absolute;
@@ -52,7 +53,7 @@
       margin-right: 20px;
       border-radius: 30px;
       width: 500px;
-      height: 50vh;
+      height: auto;
       background-color: #e6e6f1;
       color: rgb(8, 8, 8);
   
@@ -78,16 +79,29 @@
       }
   
       .subTotal {
-        text-align: center;
-        margin-top: 15px;
-        padding-bottom: 35px;
-        font-size: 1rem;
+        text-align: start;
         font-family: Helvetica, sans-serif;
-
+        font-size: 0.9rem;
+        margin-top: -2vh;
+        margin-left: 5vh;
       }
-  
+      
+      .subTotal2 {
+        text-align: end;
+        font-family: Helvetica, sans-serif;
+        font-size: 0.9rem;
+        margin-top: -4vh;
+        margin-right: 10vh;
+        padding: -1vh;
+      }
+
+      .count{
+        display: grid;
+        margin-top: 5vh;
+      }
+
+
       .productsContainer{
-        max-height: 200px;
         overflow-y: scroll;
         margin-top: 5px;
       }
