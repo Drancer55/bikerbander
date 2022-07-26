@@ -26,9 +26,8 @@ export const Store = () => {
                 <br />
                     <div>
                         <Cart/>
-                        {user ? <h5 className="welcome">Bienvenido: {user.displayName || user.email}</h5> : <h5>Gracias por tu visita</h5>}
+                        {user ? <h5 className="welcomeName">Bienvenido: {user.displayName || user.email}</h5> : <h5>Gracias por tu visita</h5>}
                     </div>
-                <hr/>
             </div>
             <div className="content">
                 {Products.map((item, i) => (

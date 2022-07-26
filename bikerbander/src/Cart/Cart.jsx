@@ -3,28 +3,28 @@ import { AuthContext } from '../Context/AuthContext';
 import styles from './styles.module.scss';
 import { ItemCart } from './ItemCart';
 import ShoppingCartTwoToneIcon from '@mui/icons-material/ShoppingCartTwoTone';
-import { Button } from 'bootstrap';
 
 export const Cart = () => {
     const [cartOpen, setCartOpen] = useState(false);
     const [productsLength, setProductsLength] = useState(0);
-    const { cartItems } = useContext(AuthContext);
-
+    const { cartItems, deleteAllItemsOfCart } = useContext(AuthContext);
+//Renderiza al actualizar las cantidades
     useEffect(() => {
         setProductsLength(
             cartItems.reduce((previus, current) => previus + current.quantity, 0)
         )
     }, [cartItems]);
-    
+//Sumatoria de los productos con el precio base (price_without_tax)
     const subTotal = cartItems.reduce((previus, current) => previus + current.quantity * current.price_without_tax, 0);
 
     return (
+        //Utilización de SASS para el carrito de compras
         <div className={styles.cartContainer}>
             <div
                 onClick={() => setCartOpen(!cartOpen)}
                 className={styles.buttonCartContainer}
             >
-                <div className={styles.buttonCart}>
+                <div className={styles.buttonCart}> 
                     {!cartOpen ? (
                         <svg
                             className={styles.open}
@@ -65,11 +65,17 @@ export const Cart = () => {
                     <div className={styles.productsNumber}>{productsLength}</div>
                 )}
             </div>
-
+{/* Comienza el espacio para imprimir los totales, así como los productos seleccionados */}
             {cartItems && cartOpen && (
                 <div className={styles.cart}>
-                    <h5 className='cartTitle'><ShoppingCartTwoToneIcon/> Order Summary <button className='DeleteAll'>Remover todo</button></h5>
-                    
+                    <h5 className='cartTitle'>
+                        <ShoppingCartTwoToneIcon />
+                        Order Summary
+                    {/* Botón remove all */}
+                        {cartItems.length >= 1 ?
+                            (<button className='DeleteAll' onClick={()=> deleteAllItemsOfCart(cartItems)}>Remover todo</button>) :
+                            null}
+                    </h5>
                     {cartItems.length === 0 ? (
                         <p className={styles.cartVacio}>Aún no has seleccionado algún producto</p>
                     ) : (
@@ -79,7 +85,27 @@ export const Cart = () => {
                             ))}
                         </div>
                     )}
-                    <h2 className={styles.subTotal}>SubTotal: ${subTotal}</h2>
+                    {/* Calculo de los precios finales, así como la suma del total con base en los datos descritos */}
+                    <div>
+                        <div className={styles.count}>
+                            <h5 className={styles.subTotal}>SubTotal:</h5>
+                            <h5 className={styles.subTotal2}>${subTotal}.00</h5>
+                        </div>
+                        <div className={styles.count}>
+                            <h5 className={styles.subTotal}>Gastos de envío:</h5>
+                            <h5 className={styles.subTotal2}>${subTotal >= 1 ? 100 : 0}.00</h5>
+                        </div>
+                        <div className={styles.count}>
+                            <h5 className={styles.subTotal}>IVA:</h5>
+                            <h5 className={styles.subTotal2}>${subTotal >= 1 ? (subTotal * 16 / 100) + ".00" : 0}</h5>
+                        </div>
+                        <div className={styles.countTotal}>
+                            <center>
+                                <h5 className={styles.Total}>Total:   ${subTotal >= 1 ? (subTotal + 100 + (subTotal * 16 / 100)) + ".00" : 0.00}</h5>
+                            </center>
+                            <br />
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

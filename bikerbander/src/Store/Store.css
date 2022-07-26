@@ -30,3 +30,9 @@
     display: flex;
     align-items: flex-start;
 }
+
+.welcomeName{
+    top: 5vh;
+    right: 100%;
+    transform: translate(-50%, -5%);
+}
