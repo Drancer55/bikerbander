@@ -6,7 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import { db } from '../firebase';
 import { collection, getDocs, query, doc, getDoc, addDoc, deleteDoc, updateDoc, setDoc, where, getFirestore } from "firebase/firestore";
 
-
+// Modal with the available information of the current user
 export const PerfilModal = ({ id }) => {
     // console.log(id)
     //Despliega el modal con el seteo de Show inicializado en false

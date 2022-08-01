@@ -2,13 +2,13 @@ import React, { Component}  from 'react';
 import './LandingPage.css';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
+// Presentation page
 const LandingPage = () => {
     const navigate = useNavigate();
     const entrance = () => {
         navigate('/store')
     }
-
+// carousel of various bicycle models
     return (
         <div className="publicity">
             <div>

@@ -5,7 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useAuth } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { addFirebase } from './addFirebase';
-
+//User signUp
 export const Register = () => {
     const [user, setUser] = useState({
         email: '',
@@ -42,16 +42,16 @@ export const Register = () => {
                 setError('El correo proporcionado no es inválido') || setTimeout(() => setError(''), 3000)};
         }
     };
-
+// Go back to login
     const turnBack = () => {
         navigate('/login')
     }
-
+// Change some features at login
     const handleChange1 = ({ target: { name, value } }) => {
         setPerfil({ ...perfil, [name]: value })
         console.log(perfil);
     }
-    
+// Obtains the necessary information to register a new user in firebase
     const handleSubmit1 = (e) => {
         e.preventDefault();
         addFirebase(perfil);

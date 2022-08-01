@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
             return [];
         }
     });
-    
+    // Inicio de sesión en diferentes formas
     const signUp = (email, password) =>
         createUserWithEmailAndPassword(auth, email, password);
     const logIn = (email, password) => signInWithEmailAndPassword(auth, email, password);
@@ -35,6 +35,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     useEffect(() => {
+
         localStorage.setItem("cartProducts", JSON.stringify(cartItems));
         // console.log(cartItems);
         //Escuchador de eventos en tiempo real -onSnapshot by Firebase
@@ -56,7 +57,7 @@ export const AuthProvider = ({ children }) => {
         const inCart = cartItems.find(
             (productInCart) => productInCart.id === item.id
             );
-
+// Función para agregar producto 
         if (inCart) {
             setCartItems(
                 cartItems.map((productInCart) => {
@@ -69,7 +70,7 @@ export const AuthProvider = ({ children }) => {
             setCartItems([...cartItems, { ...item, quantity: 1 }]);
         }
     };
-
+// función para eliminar un solo producto
     const deleteItemCart = (item) => {
         const inCart = cartItems.find(
             (productInCart) => productInCart.id === item.id
@@ -86,7 +87,7 @@ export const AuthProvider = ({ children }) => {
             }));
         }
     };
-
+// función para eliminar una fila de productos 
     const deleteAllItemCart = (item) => {
         const inCart = cartItems.find(
             (productInCart) => productInCart.id === item.id
@@ -103,7 +104,7 @@ export const AuthProvider = ({ children }) => {
             }));
         }
     };
-
+// función para eliminar todos los productos seleccionados, a fin de dejarlo en 0
     const deleteAllItemsOfCart = (cartItems) => {
         alert("Ocurrio un error, estamos trabajando para solucionarlo")
     };

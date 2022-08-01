@@ -8,14 +8,11 @@ import { useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import { Cart } from '../Cart/Cart';
-
+// Store Component, It is the home of the store 'BickerBander' webpage.
 export const Store = () => {
-    const { user, loading, addItemCart } = useAuth(AuthContext);
+    //From context
+    const { user, loading, addItemCart } = useAuth(AuthContext); 
     const navigate = useNavigate();
-    
-    const handleAddPage = () => {
-        navigate('/add-products')
-}
 
     if(loading) return <h5>Loading...</h5>
 
@@ -29,6 +26,7 @@ export const Store = () => {
                         {user ? <h5 className="welcomeName">Bienvenido: {user.displayName || user.email}</h5> : <h5>Gracias por tu visita</h5>}
                     </div>
             </div>
+            {/* map() method to go through the arrays in the JSON and print them on the screen */}
             <div className="content">
                 {Products.map((item, i) => (
                     <>

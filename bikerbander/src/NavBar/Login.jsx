@@ -6,8 +6,10 @@ import { useAuth } from '../Context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Link } from 'react-router-dom';
+// Sign in using an email or google account
 
 export const Login = () => {
+// Login Mail
     const [user, setUser] = useState({
         email: '',
         password: ''
@@ -18,7 +20,7 @@ export const Login = () => {
     const handleChange = ({ target: { name, value } }) => {
         setUser({ ...user, [name]: value })
     }
-
+// Login with email and password
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError('')
@@ -40,11 +42,11 @@ export const Login = () => {
             }
         }
     };
-
+// Button to return at Store page
     const turnBack = () => {
         navigate('/store')
     }
-
+// Forgot password?
     const handleResetPassword = async () => {
         if (!user.email) return setError("Por favor, ingresa un email.");
         try {
@@ -56,7 +58,7 @@ export const Login = () => {
             setError(error.message);
         }
     };
-
+// Login with Google
     const handleWithGoogleSignin = async (user) => {
         loginWithGoogle()
         .then((result) => {
@@ -73,6 +75,7 @@ export const Login = () => {
                 <Button variant="secondary" onClick={turnBack}><ArrowBackIcon /> Regresar </Button>
             </div>
             <div className='login' >
+                {/* Card with product information and button Add Cart */}
                 <Card className="text-center carta">
                     <Card.Title className="BBLog">BikerBander</Card.Title>
                     <Card.Body>
